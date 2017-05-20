@@ -14,9 +14,21 @@ namespace BloodAlcoholAssistant
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "Welcome",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Welcome" }
+            );
+
+            routes.MapRoute(
+                name: "Details",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Details" }
+            );
+
+            routes.MapRoute(
+                name: "Result",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Result" }
             );
         }
     }
