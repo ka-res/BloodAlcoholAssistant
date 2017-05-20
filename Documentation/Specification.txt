@@ -1,0 +1,43 @@
+1.  Dziedzina problemowa
+------------------------
+
+    Projektowany system ma mieć zastosowanie w niemal każdym środowisku, w którym pojawiają się osoby
+    spożywające alkohol. W ogólności służyć on będzie przewidywaniu zawartości alkoholu w organizmie
+    człowieka.
+
+2. Cel
+------
+
+    Powodem powstania tej aplikacji jest zapotrzebowanie na jej wystąpienie, które zauważył klient.
+
+3. Zakres odpowiedzialności systemu
+-----------------------------------
+
+    System musi oferować mechanizm komunikacji z użytkownikiem poprzez interfejs webowy i pozwalać
+    na wprowadzanie danych, które umożliwią ustalenie ilości i jakości (pod kątem zawartości procentowej) 
+    zawartego we krwi alkoholu w danym momencie.
+
+4. Użytkownicy systemu
+----------------------
+
+    Będzie nim każda osoba, która uzyska dostęp do jego położenia w sieci, a w szczególności osoba, 
+    która chce poznać swój stan upojenia alkoholowego orientacyjnie lub nawet zasymulować sytuację
+    pod kątem tego, jak zaplanować spożycie.
+
+5. Wymagania użytkownika
+------------------------
+
+    a) System musi umożliwiac wyswietlanie interfejsu webowego w dowolnej przeglądarce internetowej;
+    b) System musi przygotować umożliwic wprowadzenie danych o osobie takich jak: waga, liczba spożytych
+        alkoholi oraz płci;
+    c) System musi tworzyć możliwość uzupełnienia informacji o alkoholach w liczbie zadeklarowanej wcześniej;
+    d) System musi na podstawie dostarczonych danych obliczać zawartość alkoholu we krwi danej osoby z 
+        pominięciem upływu czasu (zakłada się dystkretną wartość modułową, która nie wpływa na wynik);
+    e) Z ustaleń z klientem wynika, że najlepiej jest skorzystać ze znanego przepisu na zawartość alkoholu we
+        krwi stworzonego przez Erika Widmarka (dostępny online).
+
+6. Opis przyszłej ewolucji systemu
+----------------------------------
+
+    Póki co brak przesłanek ku temu, by rozszerzać zakres funkcjonowania systemu. Należy jednak
+    przewidywać pojawienie się wymagania co do uwzględnienie upływu czasu w obliczeniach.
