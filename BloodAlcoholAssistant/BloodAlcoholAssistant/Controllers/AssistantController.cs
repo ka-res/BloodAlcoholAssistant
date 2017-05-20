@@ -11,22 +11,18 @@ namespace BloodAlcoholAssistant.Controllers
     {
         public ViewResult Welcome() 
         {
-            return View();
+            return View(new Person());
         }
 
-        public ViewResult Details()
+        [HttpPost]
+        public ViewResult Details(Person person)
         {
-            return View();
+            return View(new AlcoholsViewModel(person.NumberOfAlcohols));
         }
 
         public ViewResult Result()
         {
             return View();
-        }
-
-        public Person BuildPersonInfo(double weightAsKilo, Gender sex, int numberOfAlcoholos)
-        {
-            return new Person {WeightAsKilo = weightAsKilo, Sex = sex, NumberOfAlcohols = numberOfAlcoholos};
         }
     }
 }

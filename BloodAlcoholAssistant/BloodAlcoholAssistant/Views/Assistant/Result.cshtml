@@ -1,8 +1,9 @@
-﻿@model dynamic
+﻿@model BloodAlcoholAssistant.Models.ResultViewModel
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "Blood Alcohol Assistant";
 }
 
-<h2>title</h2>
+<div>
+    <h3>Zawartośc alkoholu w Twojej krwi to około @Model.CalculationResult [promil]</h3>
+</div>

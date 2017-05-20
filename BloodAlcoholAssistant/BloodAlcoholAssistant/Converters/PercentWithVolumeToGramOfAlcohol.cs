@@ -7,7 +7,8 @@ namespace BloodAlcoholAssistant.Converters
 {
     public class PercentWithVolumeToGramOfAlcohol
     {
-        public double ReturnGramsOfAlcohol(double volumeOfDrinkAsLiter, double percentOfAlcohol)
+        public static double ReturnGramsOfAlcohol(double volumeOfDrinkAsLiter, 
+            double percentOfAlcohol)
         {
             return volumeOfDrinkAsLiter * percentOfAlcohol * 7.89;
             /*tutaj juz uproscilem wzor bo jest w przepisie

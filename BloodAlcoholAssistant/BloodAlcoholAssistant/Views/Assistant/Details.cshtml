@@ -1,8 +1,25 @@
-﻿@model dynamic
+﻿@model BloodAlcoholAssistant.Models.AlcoholsViewModel
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "Blood Alcohol Assistant";
 }
 
-<h2>title</h2>
+@Html.BeginForm()
+{
+    @foreach (var alcoholItem in Model.ListOfAlcohols)
+    {
+        <div>
+            <p>@Html.TextBoxFor(name => alcoholItem.Name)</p>
+        </div>
+        <div>
+            <p>@Html.TextBoxFor(volume => alcoholItem.LitresVolume)</p>
+        </div>
+        <div>
+            <p>@Html.TextBoxFor(percent => alcoholItem.Percent)</p>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Zobacz wynik", "Result", "Assistant")
+    </div>
+}
