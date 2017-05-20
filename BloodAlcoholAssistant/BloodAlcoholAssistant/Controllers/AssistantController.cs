@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BloodAlcoholAssistant.Models;
 
 namespace BloodAlcoholAssistant.Controllers
 {
-    public class AlcoholController : Controller
+    public class AssistantController : Controller
     {
         public ViewResult Welcome() 
         {
@@ -15,16 +16,17 @@ namespace BloodAlcoholAssistant.Controllers
 
         public ViewResult Details()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ViewResult Result()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+
+        public Person BuildPersonInfo(double weightAsKilo, Gender sex, int numberOfAlcoholos)
+        {
+            return new Person {WeightAsKilo = weightAsKilo, Sex = sex, NumberOfAlcohols = numberOfAlcoholos};
         }
     }
 }

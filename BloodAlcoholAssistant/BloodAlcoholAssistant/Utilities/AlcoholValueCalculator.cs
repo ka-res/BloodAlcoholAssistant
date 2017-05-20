@@ -14,11 +14,11 @@ namespace BloodAlcoholAssistant.Utilities
 
         public double ReturnValueByGender(Person person, double alcoholValue)
         {
-            var factor = person.Sex == SexTypes.Female
+            var factor = person.Sex == Gender.Female
                 ? FemaleConstat
                 : MaleConstant;
 
-            return alcoholValue / (person.Weight * factor);
+            return alcoholValue / (person.WeightAsKilo * factor);
         }
     }
 }
