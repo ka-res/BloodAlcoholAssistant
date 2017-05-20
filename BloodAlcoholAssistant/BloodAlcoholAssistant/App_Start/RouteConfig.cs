@@ -15,20 +15,20 @@ namespace BloodAlcoholAssistant
 
             routes.MapRoute(
                 name: "Welcome",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Assistant", action = "Welcome", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Welcome" }
             );
 
             routes.MapRoute(
                 name: "Details",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Assistant", action = "Details", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Details" }
             );
 
             routes.MapRoute(
                 name: "Result",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Assistant", action = "Result", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Assistant", action = "Result" }
             );
         }
     }

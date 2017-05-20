@@ -2,24 +2,33 @@
 
 @{
     ViewBag.Title = "Blood Alcohol Assistant";
+    ViewBag.Person = HttpContext.Current.Session["Person"];
 }
 
-@Html.BeginForm()
+@using (Html.BeginForm("Calculate", "Assistant"))
 {
-    @foreach (var alcoholItem in Model.ListOfAlcohols)
+    for (var i = 0; i < (ViewBag.Person as Person).NumberOfAlcohols; i++)
     {
         <div>
-            <p>@Html.TextBoxFor(name => alcoholItem.Name)</p>
+            Podaj dane o napoju alkoholowym nr @(i+1):
+            <br/>
         </div>
         <div>
-            <p>@Html.TextBoxFor(volume => alcoholItem.LitresVolume)</p>
+            <p>Podaj nazwę: </p>
+            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)</p>
         </div>
         <div>
-            <p>@Html.TextBoxFor(percent => alcoholItem.Percent)</p>
+            <p>Podaj ilość [l]: </p>
+            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)</p>
         </div>
+        <div>
+            <p>Podaj zawartość procentową alkoholu: </p>
+            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)</p>
+        </div>
+        <br/>
     }
 
     <div>
-        @Html.ActionLink("Zobacz wynik", "Result", "Assistant")
+        <input type="submit" class="btn btn-danger"/>
     </div>
 }

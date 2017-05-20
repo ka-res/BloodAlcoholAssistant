@@ -11,18 +11,27 @@ namespace BloodAlcoholAssistant.Controllers
     {
         public ViewResult Welcome() 
         {
-            return View(new Person());
+            return View();
         }
 
-        [HttpPost]
         public ViewResult Details(Person person)
         {
-            return View(new AlcoholsViewModel(person.NumberOfAlcohols));
+            HttpContext.Session["Person"] = person;
+            return View();
         }
 
-        public ViewResult Result()
+        public ActionResult Calculate(AlcoholsViewModel alcoVm)
         {
-            return View();
+            HttpContext.Session["Alcohols"] = alcoVm;
+            return RedirectToAction("Result");
+        }
+
+        public ActionResult Result(ResultViewModel resultVm)
+        {
+            resultVm.GetResult(
+                HttpContext.Session["Person"] as Person, 
+                HttpContext.Session["Alcohols"] as AlcoholsViewModel);
+            return View(resultVm);
         }
     }
 }

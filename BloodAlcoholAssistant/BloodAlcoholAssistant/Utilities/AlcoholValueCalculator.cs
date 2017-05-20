@@ -7,13 +7,15 @@ using BloodAlcoholAssistant.Models;
 
 namespace BloodAlcoholAssistant.Utilities
 {
-    //zgodnie z: http://www.wikihow.com/Calculate-Blood-Alcohol-Content-(Widmark-Formula)
+    /*zgodnie z: http://www.wikihow.com/Calculate-Blood-Alcohol-Content-(Widmark-Formula)
+     * i z pominieciem czasu tak, jak przy omawianiu */
+
     public class AlcoholValueCalculator
     {
         private const double FemaleConstat = 0.55;
         private const double MaleConstant = 0.68;
 
-        public static double ReturnValueByGender(Person person, double alcoholValue)
+        public static double ReturnValue(Person person, double alcoholValue)
         {
             var factor = person.Sex == Gender.Female
                 ? FemaleConstat
