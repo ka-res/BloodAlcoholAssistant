@@ -1,5 +1,12 @@
 ﻿@model BloodAlcoholAssistant.Models.ResultViewModel
 
-<div>
+<div class="row text-center">
     <h3>@Model.CalculationResult</h3>
 </div>
+
+@using (Html.BeginForm("Welcome", "Assistant"))
+{
+    <div class="row" align="center">
+        <input type="submit" class="btn btn-danger input-lg" value="Przelicz ponownie" />
+    </div>
+}

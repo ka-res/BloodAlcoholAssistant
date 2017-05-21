@@ -9,25 +9,26 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>#</th>
-                <th>Nazwa</th>
-                <th>Objętość [l]</th>
-                <th>Alkohol [%]</th>
-            </tr>
+        <tr>
+            <th>#</th>
+            <th>Nazwa</th>
+            <th>Objętość [l]</th>
+            <th>Alkohol [%]</th>
+        </tr>
         </thead>
         <tbody>
-            @for (var i = 0; i < (ViewBag.Person as Person).NumberOfAlcohols; i++)
-            {
-                <tr>
-                    <th scope="row">@(i + 1)</th>
-                    <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)</th>
-                    <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)</th>
-                    <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)</th>
-                </tr>
-            }
+        @for (var i = 0; i < (ViewBag.Person as Person).NumberOfAlcohols; i++)
+        {
+            <tr>
+                <th scope="row">@(i + 1)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)</th>
+            </tr>
+        }
         </tbody>
     </table>
+
     <div class="row" align="center">
         <input type="submit" class="btn btn-danger input-lg" value="Podsumuj"/>
     </div>

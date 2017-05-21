@@ -461,12 +461,14 @@ cite {
   text-align: center;
 }
 
+h0,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
+.h0,
 .h1,
 .h2,
 .h3,
@@ -507,6 +509,12 @@ h5,
 h6 {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+h0,
+.h0 {
+    font-size: 16px;
+    color: #a5a5a5;
 }
 
 h1,
