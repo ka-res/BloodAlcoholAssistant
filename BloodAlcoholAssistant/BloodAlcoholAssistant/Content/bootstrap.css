@@ -476,6 +476,9 @@ cite {
 
 .text-left {
   text-align: left;
+  color: #909090;
+  padding-top: -15px;
+  margin-left: 10px;
 }
 
 .text-right {
@@ -819,8 +822,8 @@ pre code {
 .row {
   margin-right: 15px;
   margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  margin-top: 35px;
+  margin-bottom: 15px;
 }
 
 .row:before,
@@ -2209,8 +2212,8 @@ fieldset[disabled] .btn-warning.active {
 
 .btn-danger {
   color: #ffffff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  background-color: #313131;
+  border-color: #313131;
 }
 
 .btn-danger:hover,
@@ -2219,8 +2222,8 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #d2322d;
-  border-color: #ac2925;
+  background-color: #909090;
+  border-color: #909090;
 }
 
 .btn-danger:active,
