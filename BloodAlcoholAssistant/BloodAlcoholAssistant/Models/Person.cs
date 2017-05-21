@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using BloodAlcoholAssistant.Utilities;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BloodAlcoholAssistant.Models
 {
     public class Person
     {
+        [Range(0.0, 250.0, ErrorMessage = "Waga musi być z przedziału od 0 do 250 kg")]
         public double WeightAsKilo { get; set; }
+
+        [Range(0.0, 100.0, ErrorMessage = "Ilość alkoholi należy podać z przedziału od 0 do 100")]
         public int NumberOfAlcohols { get; set; }
+
         public Gender Sex { get; set; }
     }
 

@@ -1,25 +1,22 @@
 ﻿@model BloodAlcoholAssistant.Models.Person
 
-@{
-    ViewBag.Title = "Blood Alcohol Assistant";
-}
-
 @using (Html.BeginForm("Details", "Assistant"))
 {
     <div class="row">
         <div class="col-md-4">
             <h3>Podaj swoją wagę</h3>
-            <p>
+            <p class="h0">
                 Jest to konieczne, by ustalić orientacyjnie wpływ deklarowanej dawki alkoholu na Twój organizm.
             </p>
             <p>
                 @Html.TextBoxFor(person => person.WeightAsKilo)
-                @Html.ValidationMessageFor(person => person.WeightAsKilo)
+                @Html.ValidationMessageFor(person => person.WeightAsKilo) [kg]
             </p>
         </div>
+
         <div class="col-md-4">
             <h3>Wskaż swoją płeć</h3>
-            <p>
+            <p class="h0">
                 W zależności od płci wpływ alkoholu na Twój organizm różni się.
             </p>
             <p>
@@ -28,18 +25,25 @@
                 @Html.ValidationMessageFor(person => person.Sex)
             </p>
         </div>
+
         <div class="col-md-4">
             <h3>Podaj liczbę spożytych alkoholi</h3>
-            <p>
+            <p class="h0">
                 Dzięki temu wygenerujemy odpowiednią ilość wierszy do uzupełnienia w kolejnym oknie.
             </p>
             <p>
                 @Html.TextBoxFor(person => person.NumberOfAlcohols)
-                @Html.ValidationMessageFor(person => person.NumberOfAlcohols)
+                @Html.ValidationMessageFor(person => person.NumberOfAlcohols) [sztuk]
             </p>
         </div>
-        <div>
-            <input type="submit" class="btn btn-danger"/>
-        </div>
     </div>
+
+    <div class="row text-center">
+        <input  type="submit" class="btn btn-danger input-lg" value="Dodaj szczegóły"/>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

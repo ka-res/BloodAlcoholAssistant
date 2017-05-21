@@ -1,34 +1,42 @@
 ﻿@model BloodAlcoholAssistant.Models.AlcoholsViewModel
 
 @{
-    ViewBag.Title = "Blood Alcohol Assistant";
     ViewBag.Person = HttpContext.Current.Session["Person"];
 }
 
 @using (Html.BeginForm("Calculate", "Assistant"))
 {
-    for (var i = 0; i < (ViewBag.Person as Person).NumberOfAlcohols; i++)
-    {
-        <div>
-            Podaj dane o napoju alkoholowym nr @(i+1):
-            <br/>
-        </div>
-        <div>
-            <p>Podaj nazwę: </p>
-            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)</p>
-        </div>
-        <div>
-            <p>Podaj ilość [l]: </p>
-            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)</p>
-        </div>
-        <div>
-            <p>Podaj zawartość procentową alkoholu: </p>
-            <p>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)</p>
-        </div>
-        <br/>
-    }
 
-    <div>
-        <input type="submit" class="btn btn-danger"/>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nazwa</th>
+            <th>Objętość [l]</th>
+            <th>Alkohol [%]</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for (var i = 0; i < (ViewBag.Person as Person).NumberOfAlcohols; i++)
+        {
+            <tr>
+                <th scope="row">@(i + 1)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <div class="row" align="center">
+        <input type="submit" class="btn btn-danger input-lg" value="Podsumuj"/>
     </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

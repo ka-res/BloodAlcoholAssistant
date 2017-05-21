@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using BloodAlcoholAssistant.Converters;
+﻿using BloodAlcoholAssistant.Converters;
 using BloodAlcoholAssistant.Utilities;
 
 namespace BloodAlcoholAssistant.Models
 {
     public class ResultViewModel
     {
-        public double CalculationResult { get; set; }
+        public string CalculationResult { get; set; }
 
         public void GetResult(Person person, AlcoholsViewModel alcoholVm)
         {
-            var sumOfAlcohols = alcoholVm.ListOfAlcohols
-                .Sum(alcoholItem => PercentWithVolumeToGramOfAlcohol
-                .ReturnGramsOfAlcohol(alcoholItem.LitresVolume, alcoholItem.Percent));
-
-            CalculationResult = AlcoholValueCalculator.ReturnValue(person, sumOfAlcohols);
+            CalculationResult = ResultToText.GetResultValue(
+                AlcoholValueCalculator.CalculateRealAlcoholValue(
+                    person, alcoholVm));
         }
     }
 }
