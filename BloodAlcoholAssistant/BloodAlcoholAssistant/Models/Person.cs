@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using BloodAlcoholAssistant.Utilities;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BloodAlcoholAssistant.Models
 {

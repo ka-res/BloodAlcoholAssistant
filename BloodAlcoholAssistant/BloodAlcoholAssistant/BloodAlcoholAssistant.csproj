@@ -149,10 +149,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AssistantController.cs" />
     <Compile Include="Converters\PercentWithVolumeToGramOfAlcohol.cs" />
+    <Compile Include="Converters\ResultToText.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Mappers\PersonMapper.cs" />
     <Compile Include="Models\Alcohol.cs" />
     <Compile Include="Models\AlcoholsViewModel.cs" />
     <Compile Include="Models\Person.cs" />
