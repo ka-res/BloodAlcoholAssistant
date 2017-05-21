@@ -21,9 +21,12 @@
         {
             <tr>
                 <th scope="row">@(i + 1)</th>
-                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)</th>
-                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)</th>
-                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Name)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].LitresVolume)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
+                <th>@Html.TextBoxFor(x => Model.ListOfAlcohols[i].Percent)
+                    @Html.ValidationMessageFor(x => Model.ListOfAlcohols[i].Name)</th>
             </tr>
         }
         </tbody>
@@ -32,8 +35,8 @@
     <div class="row" align="center">
         <input type="submit" class="btn btn-danger input-lg" value="Podsumuj"/>
     </div>
-    
-    <div class="row">
-        <small>* Do notacji niecałkowitej proszę używać symbolu ',' (przecinka)</small>
-    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
